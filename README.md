@@ -6,3 +6,9 @@ Investigate how AGN host galaxies differ from inactive galaxies in their stellar
 
 # Status:
 Data ingestion and sample definition.
+
+# Project structure
+
+- `data/` -  raw and processed data (not tracked in Git)
+- `scripts/` - analysis scripts
+- `figures/` - generated plots and figures
