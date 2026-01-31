@@ -1,0 +1,12 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data files (will be large)
+data/
+
+# Editor settings
+.vscode/
