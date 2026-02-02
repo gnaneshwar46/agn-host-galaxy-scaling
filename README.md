@@ -45,6 +45,6 @@ Taken together, these results indicate that stellar mass alone is insufficient t
 
 ## Redshift sanity check
 
-The redshift distribution of the cleaned sample spans $-0.004 \lesssim z \lesssim 0.15$, with a median redshift of $z \appox 0.085$. The small number of negative redshifts is expected for very nearby galaxies due to peculiar velocities.
+The redshift distribution of the cleaned sample spans $-0.004 \lesssim z \lesssim 0.15$, with a median redshift of $z \approx 0.085$. The small number of negative redshifts is expected for very nearby galaxies due to peculiar velocities.
 
 This confirms that the observed morphology-dependent SMBH proxy trends are not driven by distance-related systematics or resolution effects, but reflect intrinsic differences in galaxy structure.
