@@ -34,3 +34,11 @@ Separating galaxies by Sérsic index reveals two clearly different regimes:
 ### Physical interpretation
 
 The results demonstrate that SMBH–host galaxy scaling relations are not universal. Instead, they primarily arise in bulge-dominated galaxies, while disk-dominated systems follow a different evolutionary path. The large scatter seen in global relations is largely a consequence of combining these two populations.
+
+## Unified Interpretation: Galaxy Structure as the Primary Driver
+
+Across both projects, galaxy structure emerges as the primary organizing parameter of the observed scaling relations. In the mass-size analysis, the large scatter in the global relation is largely resolved by separating disk and bulge dominated systems using the Sérsic index, revealing two distinct and internally tight relations.
+
+In the SMBH proxy analysis, the same structural division explains the residual scatter at fixed stellar mass: disk-dominated galaxies maintain low central concentrations over a wide mass range, while bulge-dominated system show systematically increasing concentration and tighter SMBH proxy correlations. 
+
+Taken together, these results indicate that stellar mass alone is insufficient to describe galaxy or black hole growth. Instead, bulge formation marks a key evolutionary bifurcation, with the commonly reported global scaling relations arising primarily from the superposition of structurally distinct galaxy populations.
