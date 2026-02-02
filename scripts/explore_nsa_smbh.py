@@ -67,6 +67,17 @@ def main():
     print("Median logM:", float(np.median(logM)))
 
     # -----------------------------------------------
+    # Redshift sanity check
+    # -----------------------------------------------
+
+    z = data["Z"][good]
+
+    print("\nRedshift sanity check:")
+    print("Min z:", z.min())
+    print("Max z:", z.max())
+    print("Median z:", float(np.median(z)))
+
+    # -----------------------------------------------
     # SMBH proxy vs host stellar mass (exploratory plot)
     # -----------------------------------------------
     
