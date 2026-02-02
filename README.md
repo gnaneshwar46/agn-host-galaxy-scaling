@@ -1,3 +1,11 @@
+# AGN Host Galaxy - SMBH Scaling Relations
+
+This project investigates how supermassive black hole(SMBH) growth relates to host galaxy properties in the local universe, using data from the NASA-Sloan Atlas(NSA).
+
+Rather than assuming a universal SMBH-host scaling relation, the analysis demonstrates that galaxy structure and morphology are the primary drivers of the observed trends. By combining a Sérsic-index based SMBH scaling relations emerge mainly in bulge-dominated galaxies, while disk-dominated systems follow a distinct evolutionary path.
+
+The analysis is fully reproducible and is intended as a research-grade, portfolio-ready study suitable for PhD preparation and galaxy evolution work.
+
 ## agn-host-galaxy-scaling
 Observational analysis of AGN host galaxy scaling relations using SDSS and NASA-Sloan Atlas data.
 
