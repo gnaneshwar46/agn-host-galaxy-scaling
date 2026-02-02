@@ -42,3 +42,9 @@ Across both projects, galaxy structure emerges as the primary organizing paramet
 In the SMBH proxy analysis, the same structural division explains the residual scatter at fixed stellar mass: disk-dominated galaxies maintain low central concentrations over a wide mass range, while bulge-dominated system show systematically increasing concentration and tighter SMBH proxy correlations. 
 
 Taken together, these results indicate that stellar mass alone is insufficient to describe galaxy or black hole growth. Instead, bulge formation marks a key evolutionary bifurcation, with the commonly reported global scaling relations arising primarily from the superposition of structurally distinct galaxy populations.
+
+## Redshift sanity check
+
+The redshift distribution of the cleaned sample spans $-0.004 \lesssim z \lesssim 0.15$, with a median redshift of $z \appox 0.085$. The small number of negative redshifts is expected for very nearby galaxies due to peculiar velocities.
+
+This confirms that the observed morphology-dependent SMBH proxy trends are not driven by distance-related systematics or resolution effects, but reflect intrinsic differences in galaxy structure.
