@@ -1,58 +1,124 @@
-# AGN Host Galaxy - SMBH Scaling Relations
+# SMBH–Host Galaxy Scaling Relations
 
-This project investigates how supermassive black hole(SMBH) growth relates to host galaxy properties in the local universe, using data from the NASA-Sloan Atlas(NSA).
+**SMBH–host galaxy scaling relations are not universal — they emerge primarily in bulge-dominated systems, while disk-dominated galaxies follow a structurally distinct evolutionary path.**
 
-Rather than assuming a universal SMBH-host scaling relation, the analysis demonstrates that galaxy structure and morphology are the primary drivers of the observed trends. By combining a Sérsic-index based SMBH scaling relations emerge mainly in bulge-dominated galaxies, while disk-dominated systems follow a distinct evolutionary path.
+This repository presents an observational analysis of supermassive black hole (SMBH) proxy behaviour across morphologically distinct galaxy populations using NASA–Sloan Atlas (NSA) data. The central finding is that galaxy structure, not stellar mass alone, is the primary organising parameter of SMBH–host scaling relations.
 
-The analysis is fully reproducible and is intended as a research-grade, portfolio-ready study suitable for PhD preparation and galaxy evolution work.
+---
 
-## agn-host-galaxy-scaling
-Observational analysis of AGN host galaxy scaling relations using SDSS and NASA-Sloan Atlas data.
+## Key Results
 
-## Goal:
-Investigate how AGN host galaxies differ from inactive galaxies in their stellar mass-size relation.
+- Disk-dominated galaxies (n < 2.5) maintain low Sérsic index across a wide stellar mass range — consistent with inefficient bulge and SMBH growth
+- Spheroid-dominated galaxies (n ≥ 2.5) show a clear increase in Sérsic index with stellar mass and significantly reduced scatter
+- The large scatter in global SMBH proxy relations is largely a consequence of mixing these two structurally distinct populations
+- Morphology-dependent median trends reveal two internally coherent regimes hidden in the global relation
 
-## Status:
-Data ingestion and sample definition.
+---
 
-## Project structure
+## Figures
 
-- `data/` -  raw and processed data (not tracked in Git)
-- `scripts/` - analysis scripts
-- `figures/` - generated plots and figures
+![Global SMBH Proxy vs Stellar Mass](figures/sersic_n_vs_mass.png)
 
-## SMBH Proxy Analysis: Sérsic Index vs Stellar Mass
+*Global distribution of Sérsic index vs stellar mass. The broad scatter reflects the superposition of structurally distinct populations.*
 
-Because direct supermassive black hole masses are not available for most galaxies in the NSA, we use the Sérsic index ($n$) as a structural proxy for bulge dominance, which is empirically linked to SMBH growth.
+![Morphology Split](figures/sersic_n_vs_mass_morphology.png)
 
-### Global behaviour
+*Separating disk-dominated (n < 2.5) and spheroid-dominated (n ≥ 2.5) galaxies reveals two clearly distinct regimes in SMBH proxy behaviour.*
 
-When all galaxies are considered together, the Sérsic index shows a broad, scattered increase with stellar mass. However, this apparent trend is not fundamental and is driven by the mixing of structurally distinct galaxy populations.
+![Median Trends by Morphology](figures/sersic_n_vs_mass_medians.png)
 
-### Morphology-dependent behaviour
+*Binned median Sérsic index vs stellar mass by morphology. Spheroid-dominated systems show a systematic increase; disk-dominated systems remain approximately flat.*
 
-Separating galaxies by Sérsic index reveals two clearly different regimes:
+---
 
-- **Disk-like galaxies ($n < 2.5$)**  
-  These systems occupy a nearly horizontal band in Sérsic index across a wide stellar mass range. Even massive disk galaxies retain low $n$ values, indicating weak bulge growth and, by implication, inefficient SMBH growth.
+## Scientific Motivation
 
-- **Spheroid-like galaxies ($n \ge 2.5$)**  
-  These systems show a clear increase in Sérsic index with stellar mass and significantly reduced scatter. This population defines the classical SMBH–host scaling relations seen in the literature.
+Direct SMBH masses are unavailable for most galaxies in large photometric surveys. The Sérsic index (n) serves as a structural proxy for bulge dominance, which is empirically linked to SMBH growth through the M–sigma and related scaling relations.
 
-### Physical interpretation
+This analysis asks:
 
-The results demonstrate that SMBH–host galaxy scaling relations are not universal. Instead, they primarily arise in bulge-dominated galaxies, while disk-dominated systems follow a different evolutionary path. The large scatter seen in global relations is largely a consequence of combining these two populations.
+> Is the SMBH–host galaxy scaling relation universal, or does it depend on host morphology?
 
-## Unified Interpretation: Galaxy Structure as the Primary Driver
+The results demonstrate that it is not universal — and that morphological structure is the key organising variable.
 
-Across both projects, galaxy structure emerges as the primary organizing parameter of the observed scaling relations. In the mass-size analysis, the large scatter in the global relation is largely resolved by separating disk and bulge dominated systems using the Sérsic index, revealing two distinct and internally tight relations.
+---
 
-In the SMBH proxy analysis, the same structural division explains the residual scatter at fixed stellar mass: disk-dominated galaxies maintain low central concentrations over a wide mass range, while bulge-dominated system show systematically increasing concentration and tighter SMBH proxy correlations. 
+## Dataset
 
-Taken together, these results indicate that stellar mass alone is insufficient to describe galaxy or black hole growth. Instead, bulge formation marks a key evolutionary bifurcation, with the commonly reported global scaling relations arising primarily from the superposition of structurally distinct galaxy populations.
+**Source:** NASA–Sloan Atlas (NSA)  
+**SMBH proxy:** Sérsic index (n) — structural proxy for bulge dominance  
+**Host property:** Stellar mass (M\*; Sérsic-based, log-transformed)
 
-## Redshift sanity check
+Quality cuts applied:
 
-The redshift distribution of the cleaned sample spans $-0.004 \lesssim z \lesssim 0.15$, with a median redshift of $z \approx 0.085$. The small number of negative redshifts is expected for very nearby galaxies due to peculiar velocities.
+- Finite, positive Sérsic index
+- Finite, positive stellar mass
 
-This confirms that the observed morphology-dependent SMBH proxy trends are not driven by distance-related systematics or resolution effects, but reflect intrinsic differences in galaxy structure.
+Morphological classification:
+
+- Disk-dominated: n < 2.5
+- Spheroid-dominated: n ≥ 2.5
+
+---
+
+## Methodology
+
+- FITS ingestion via Astropy
+- Quality filtering on Sérsic index and stellar mass
+- Morphological split at n = 2.5
+- Binned median trends computed in stellar mass bins of width 0.25 dex
+- Minimum 10 galaxies per bin required for median computation
+- Redshift distribution verified as a sanity check against distance-related systematics
+
+---
+
+## Interpretation
+
+The global SMBH proxy relation shows broad scatter across all stellar masses. Once galaxies are separated by morphology:
+
+1. **Disk-dominated systems** occupy a nearly horizontal band — even massive disks retain low Sérsic index, implying weak bulge growth and inefficient SMBH growth across the mass range.
+2. **Spheroid-dominated systems** show a systematic rise in Sérsic index with stellar mass and significantly tighter internal scatter — this population drives the classical scaling relations reported in the literature.
+
+The commonly observed global SMBH–host scaling relation is therefore not a fundamental single-population trend, but arises from the superposition of two structurally distinct evolutionary channels.
+
+---
+
+## Reproducibility
+
+```bash
+pip install -r requirements.txt
+python scripts/explore_nsa_smbh.py
+```
+
+Raw NSA FITS data is not version-controlled. Place the file in `data/` before running.
+
+---
+
+## Repository Structure
+
+```
+SMBH-host-galaxy-scaling/
+│
+├── README.md
+├── requirements.txt
+├── scripts/
+│   └── explore_nsa_smbh.py
+├── figures/
+│   ├── sersic_n_vs_mass.png
+│   ├── sersic_n_vs_mass_morphology.png
+│   └── sersic_n_vs_mass_medians.png
+└── data/  (not version-controlled)
+```
+
+---
+
+## Project Philosophy
+
+This repository presents an exploratory but structurally rigorous observational study. The emphasis is on physically interpretable results and honest representation of what the data shows, rather than overfitting a narrative to limited proxies.
+
+---
+
+## Author
+
+Gnaneshwar G S  
+Computational galaxy evolution | Structural scaling relations | Statistical modeling in large survey datasets
